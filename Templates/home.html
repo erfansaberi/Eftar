@@ -1,0 +1,90 @@
+<html dir="rtl" style="padding-right: 1%;">
+  <head>
+    <title>چقدر مونده تا افطار؟</title>
+  </head>
+
+{% if data.status == 'remaining' %}
+  <body>
+      <p>شهر : {{data.shahr}}</p>
+      <p>اذان مغرب ساعت {{data.maghreb}}</p>
+      <p>زمان باقی مانده تا افطار  {{data.hour}} ساعت و {{data.minute}} دقیقه .</p>
+      <br>
+      <a href="/">بازگشت</a>
+{% elif data.status == 'error' %}
+  <body>
+    <p>لطفا شهر را انتخاب کنید یا کد شهر را به صورت دستی وارد کنید</p>
+    <p>کد شهر را میتوانید در وبسایت <a href="http://prayer.aviny.com/">آوینی</a> پیدا کنید</p>
+    <form action="/">
+      <label for="citycode">کد شهر:</label><br>
+      <input type="number" id="citycode" name="citycode"><br>
+      <input type="submit" value="Submit">
+    </form>     
+    <br>
+    <table>
+      <div class="rTableBody">
+          <div class="rTableRow">
+              <div class="rTableCell"><a href="/?citycode=1">تهران</a></div>
+              <div class="rTableCell"><a href="/?citycode=13">مشهد</a></div>
+              <div class="rTableCell"><a href="/?citycode=6">تبریز</a></div>
+              <div class="rTableCell"><a href="/?citycode=11">قم</a></div>
+              <div class="rTableCell"><a href="/?citycode=2">اصفهان</a></div>
+              <div class="rTableCell"><a href="/?citycode=8">شیراز</a></div>
+              <div class="rTableCell"><a href="/?citycode=14">یزد</a></div>
+              <div class="rTableCell"><a href="/?citycode=3">ارومیه</a></div>
+              <div class="rTableCell"><a href="/?citycode=19">کرمان</a></div>
+              <div class="rTableCell"><a href="/?citycode=5">اهواز</a></div>
+              <div class="rTableCell"><a href="/?citycode=15">بجنورد</a></div>
+              <div class="rTableCell"><a href="/?citycode=18">گرگان</a></div>
+              <div class="rTableCell"><a href="/?citycode=17">ساری</a></div>
+              <div class="rTableCell"><a href="/?citycode=16">رشت</a></div>
+              <div class="rTableCell"><a href="/?citycode=26">اردبیل</a></div>
+              <div class="rTableCell"><a href="/?citycode=27">سمنان</a></div>
+              <div class="rTableCell"><a href="/?citycode=10">قزوین</a></div>
+              <div class="rTableCell"><a href="/?citycode=25">زنجان</a></div>
+              <div class="rTableCell"><a href="/?citycode=22">سنندج</a></div>
+              <div class="rTableCell"><a href="/?citycode=21">کرمانشاه</a></div>
+              <div class="rTableCell"><a href="/?citycode=24">همدان</a></div>
+              <div class="rTableCell"><a href="/?citycode=827">بیرجند</a></div>
+              <div class="rTableCell"><a href="/?citycode=29">ایلام</a></div>
+              <div class="rTableCell"><a href="/?citycode=30">خرم آباد</a></div>
+              <div class="rTableCell"><a href="/?citycode=31">شهرکرد</a></div>
+              <div class="rTableCell"><a href="/?citycode=32">یاسوج</a></div>
+              <div class="rTableCell"><a href="/?citycode=20">بوشهر</a></div>
+              <div class="rTableCell"><a href="/?citycode=12">زاهدان</a></div>
+              <div class="rTableCell"><a href="/?citycode=7">بندر عباس</a></div>
+              <div class="rTableCell"><a href="/?citycode=4">اراک</a></div>
+              <div class="rTableCell"><a href="/?citycode=9">کرج</a></div>
+              <div class="rTableCell"><a href="/?citycode=342">دزفول</a></div>
+              <div class="rTableCell"><a href="/?citycode=991">ساوه</a></div>
+              <div class="rTableCell"><a href="/?citycode=578">شاهرود</a></div>
+              <div class="rTableCell"><a href="/?citycode=479">بروجرد</a></div>
+              <div class="rTableCell"><a href="/?citycode=822">سبزوار</a></div>
+              <div class="rTableCell"><a href="/?citycode=968">کیش</a></div>
+          </div>
+      </div>
+    </table>
+
+{% elif data.status == 'eftar' %}
+  <body>
+      <p>شهر : {{data.shahr}}</p>
+      <p>به نظر میرسد وقت افطار است</p>
+      <br>
+      <a href="/">بازگشت</a>
+{% elif data.status == 'cityNotFound' %}
+    <body>
+      <p>شهر پیدا نشد</p>
+      <br>
+      <a href="/">بازگشت</a>
+{% elif data.status == 'notstarted' %}
+  <body>
+      <p>شهر : {{data.shahr}}</p>
+      <p>روزه شما هنوز شروع نشده</p>
+      <p>اذان صبح: {{data.sobh}}</p>
+      <br>
+      <a href="/">بازگشت</a>
+{% endif %}
+    <br>
+    <p>این برنامه صرفا جهت اطلاع شما نوشته شده است و ممکن است دارای خطا باشد</p>
+    <p>لطفا افطارتان را با اتکا به داده های این برنامه باز نکنید :)</p>
+  </body>
+</html>
