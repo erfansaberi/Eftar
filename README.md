@@ -1,5 +1,5 @@
 <html dir="rtl">
-  <body>
+  <body dir="rtl">
 افطار (Eftar)
 چقدر مونده تا افطار؟
 
