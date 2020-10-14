@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="static/css/min.css">
+    <title>How much to open fast ?</title>
+  </head>
+  <body>
+    <h1 class="start">How much to open fast ?</h1>
+    <div class="all">
+      {% if data.status == 'remaining' %}
+      <div class="row">
+        <div>
+          <p class="city">City : {{data.shahr}}</p>
+          <p>Evening Azan : {{data.maghreb}}</p>
+          <p>Time to open fast : {{data.hour}} H {{data.minute}} M .</p>
+          <br>
+          <a href="/" class="back">Back</a>
+        </div>
+      </div>
+
+      {% elif data.status == 'error' %}
+      <div class="row">
+        <div class="get">
+          <div class="help">
+            <p>You can find you'r city code <a href="/city" target="_blank" rel="noopener noreferrer">here</a></p>
+          </div>
+          <hr class="inrowone">
+          <br>
+          <div class="enter">
+            <form action="/" class="form">
+              <label class="lbl">Enter City Code</label>
+              <br>
+              <br>
+              <input type="text" id="searchbox" placeholder="City Code" name="citycode" class="inp">
+              <br>
+              <br>
+              <button type="submit" class="btn">Go !</button>
+            </form>
+          </div>
+        </div>
+      </div>    
+
+      {% elif data.status == 'eftar' %}
+      <div class="row">
+        <div>
+          <p class="city">City : {{data.shahr}}</p>
+          <p class="time">It seems it's time for open fast !</p>
+          <br>
+          <a href="/" class="back">Back</a>
+        </div>
+      </div>
+
+      {% elif data.status == 'cityNotFound' %}
+      <div class="row">
+        <div>
+          <p class="invalid">Invalid city code .</p>
+          <br>
+          <a href="/" class="back">Back</a>
+        </div>
+      </div>
+
+      {% elif data.status == 'notstarted' %}
+      <div class="row ">
+        <div>
+          <p class="city">City : {{data.shahr}}</p>
+          <p>You'r fast is not starts yet .</p>
+          <p>Morning Azan: {{data.sobh}}</p>
+          <br>
+          <div class="back">
+            <a href="/" class="back">Back</a>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+      <br>
+      <div class="alert">
+        <div>
+          <p>This App may has some Bugs !</p>
+          <p>So , Do not open you'r fast by this app data .</p>
+        </div>
+      </div>
+      <br>
+
+      <div class="end">
+        <p>Programmer <a href="https://github.com/erfansaberi" target="_blank">Erfan Saberi</a></p>
+        <p>Designer <a href="https://github.com/hosseindelara" target="_blank">Hossein Delara</a></p>
+        <hr class="footer">
+        <p>Github <a href="https://github.com/erfansaberi/eftar" target="_blank">Eftar</a></p>
+      </div>
+    </div>
+  </body>
+</html>
