@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.azan_time_body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/static/image2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.azan_time_body .container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.azan_time_alert_text {
+  padding: 1.3rem 3rem;
+  color: white;
+  -webkit-animation: alert_animation infinite 3s;
+          animation: alert_animation infinite 3s;
+  border-radius: 50px;
+  border: 1.5px solid goldenrod;
+  margin: 2rem;
+  font-size: 18px;
+}
+
+@-webkit-keyframes alert_animation {
+  0% {
+    background-color: goldenrod;
+    color: #fff;
+  }
+  50% {
+    background-color: transparent;
+    color: goldenrod;
+  }
+  100% {
+    background-color: goldenrod;
+    color: #fff;
+  }
+}
+
+@keyframes alert_animation {
+  0% {
+    background-color: goldenrod;
+    color: #fff;
+  }
+  50% {
+    background-color: transparent;
+    color: goldenrod;
+  }
+  100% {
+    background-color: goldenrod;
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .azan_time_alert_text {
+    padding: 1rem 2rem;
+    border: 1px solid goldenrod;
+    margin: 2rem;
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=azan_time.css.map */
