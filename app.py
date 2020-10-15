@@ -1,4 +1,5 @@
-import requests , datetime
+import requests
+import datetime
 from flask import Flask, render_template, request, redirect, render_template
 
 app = Flask(__name__)
@@ -48,12 +49,9 @@ def getremainingtime():
             remainingminute = 60 + remainingminute
         remainingtimestr = f'{remaininghour} Hours and {remainingminute} Minutes'
         return render_template('home.html',data={'status':'remaining','maghreb':maghreb,'hour':remaininghour,'minute':remainingminute,'shahr':shahr,'time':now})
-    else:
-        return '<h1>An error occurred during connecting to "Aviny.com" API .<h1>'
 
-@app.route("/city")
-def city() :
-    return render_template('city.html',data={})
+    else:
+        return 'An error occurred during connecting to "Aviny.com" API.'
 
 if __name__ == "__main__":
     app.run("localhost", 5000, debug=True)

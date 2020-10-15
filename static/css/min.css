@@ -1,110 +1,13 @@
-﻿body {
-  background-color: #f1f1f1;
+﻿@font-face {
+    font-family: Shabnam;
+    src: url(Shabnam-FD.ttf);
+  }
+body{
+    direction: rtl;
+    font-size: 14px;
+    font-family: Shabnam;
+    text-align: right;
 }
-/* X */
-.back {
-  text-decoration: none;
-}
-.city {
-  color: blue;
-}
-.inrowone {
-  border: solid gray 1px;
-  width: auto;
-}
-.time {
-  color: green;
-}
-.invalid {
-  color: red;
-}
-
-.all {
-  border: none;
-  background-color: #C0C0C0;
-  box-shadow: 0px 0px 10px 10px #C0C0C0;
-  border-radius: 25px;
-  text-align: center;
-  width: 500px;
-  margin-left: 50px;
-}
-
-/* Start Class */
-.start {
-  margin-top: 50px;
-  margin-left: 80px;
-}
-
-/* Row Class */
-.row {
-  /* margin-left: 50px; */
-  width: 500px;
-  height: auto;
-  border: solid gray 1px;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
-  background-color: white;
-  text-align: center;
-}
-
-/* Alert Class */
-.alert {
-  color: white;
-  background-color: red;
-  border: solid red 1px;
-  height: auto;
-  width: 500px;
-}
-
-/* Help Class */
-.help {
-  color: darkblue;
-  text-align: center;
-}
-.help a {
-  text-decoration: none;
-  color: blue;
-  font-size: 25px;
-}
-
-/* Enter Class */
-.enter {
-  text-align: center;
-}
-.enter .lbl {
-  color: green;
+h1,h2,h3{
   font-size: 18px;
-}
-.enter #searchbox {
-  border-right: none;
-  border-left: none;
-  border-top: none;
-  border-bottom: solid red 1px;
-  text-align: center;
-  color: red;
-  font-size: 15px;
-}
-.enter .btn {
-  border: solid #002000 1px;
-  background-color: #009000;
-  border-radius: 5px;
-  height: 25px;
-  width: 150px;
-  color: white;
-}
-
-/* HR ( Footer ) */
-.footer {
-  border: solid gray 1px;
-  width: auto;
-}
-
-/* End Class */
-.end {
-  background-color: white;
-  height: auto;
-  width: 500px;
-  border: solid gray 1px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
 }
