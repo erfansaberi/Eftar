@@ -1,0 +1,12 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+build:
+  docker:
+    web: Dockerfile
+release:
+    image: web
+    command:
+      - python wsgi.py
+run:
+    web: gunicorn config.wsgi
