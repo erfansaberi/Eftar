@@ -1,0 +1,244 @@
+<html dir="rtl">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>چقدر مونده تا افطار؟</title>
+      <link rel="stylesheet" href="/static/time_alert.css">
+      <link rel="stylesheet" href="/static/not_find.css">
+      <link rel="stylesheet" href="/static/azan_time.css">
+      <link rel="stylesheet" href="/static/show_result.css">
+      <link rel="stylesheet" href="/static/main.css">
+      <link rel="shortcut icon" href="/static/nature (2).jpg">
+  </head>
+
+
+<!-- SHOW RESULT   ========================================================  -->
+{% if data.status == 'remaining' %}
+<body class="body_show_result" dir="rtl">
+  <div class="main">
+      <div class="container_bg"></div>
+
+      <div class="container_right">
+          <div class="city_name">
+              <div class="city_name_right">
+                  <img class="city_name_right_image"
+                      src="/static/interface.svg" alt="">
+                  <p>شهر</p>
+              </div>
+              <div class="city_name_left">
+                  <p>{{data.shahr}}</p>
+              </div>
+          </div>
+
+          <div class="azan_hour">
+              <div class="azan_hour_right">
+                  <img class="azan_hour_right_image"
+                      src="/static/wall-clock.svg" alt="">
+                  <p>اذان مغرب</p>
+              </div>
+              <div class="azan_hour_left">
+                  <p>{{data.maghreb}}</p>
+              </div>
+          </div>
+
+          <div class="remaining_time">
+              <div class="remaining_time_right">
+                  <img class="remaining_time_right_image"
+                      src="/static/time-and-date.svg" alt="">
+                  <p>زمان باقی مانده</p>
+              </div>
+              <div class="remaining_time_left">
+                  <p>{{data.hour}} ساعت و {{data.minute}} دقیقه </p>
+              </div>
+          </div>
+
+          <a href="/" class="back_btn">بازگشت</a>
+      </div>
+
+      <div class="container_left">
+          <img src="/static/roof.svg" class="container_left_image" alt="">
+      </div>
+
+  </div>
+{% elif data.status == 'error' %}
+
+
+<!-- HOME BODY ============================================================ -->
+<body class="body" style="background-image: url('/static/image2.jpg');">
+    <div class="header">
+      <p id="show_date"></p>
+      <h1 class="header_title">محاسبه زمان افطار</h1>
+      <p id="show_time"></p>
+    </div>
+
+    <div class="main">
+      <div class="main_hider"></div>
+
+      <div class="main_container">
+
+        <div class="main_container_right">
+          <p class="main_code_alert">لطفا شهر را انتخاب کنید یا کد شهر را به صورت دستی وارد کنید</p>
+          <p class="main_code_text">کد شهر را میتوانید در وبسایت <a style="color:darkblue;text-decoration: none;" href="http://prayer.aviny.com/">آوینی</a> پیدا کنید</p>
+          <form action="/">
+            <input type="number" id="citycode" name="citycode" class="main_code_input" placeholder="کد شهر"><br>
+            <input type="submit" value="محاسبه" class="main_code_btn">
+          </form>     
+        </div>
+
+
+    <table>
+      <div class="rTableBody btn_container">
+
+          <div class="rTableRow">
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=1">تهران</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=13">مشهد</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=6">تبریز</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=11">قم</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=2">اصفهان</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=8">شیراز</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=14">یزد</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=3">ارومیه</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=19">کرمان</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=5">اهواز</a></div>
+            </div>
+            
+            <div class="rTableRow">
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=15">بجنورد</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=18">گرگان</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=17">ساری</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=16">رشت</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=26">اردبیل</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=27">سمنان</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=10">قزوین</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=25">زنجان</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=22">سنندج</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=21">کرمانشاه</a></div>
+            </div>
+            
+            
+            <div class="rTableRow">
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=24">همدان</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=827">بیرجند</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=29">ایلام</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=30">خرم آباد</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=31">شهرکرد</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=32">یاسوج</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=20">بوشهر</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=12">زاهدان</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=7">بندر عباس</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=4">اراک</a></div>
+            </div>
+
+            <div class="rTableRow">
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=9">کرج</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=342">دزفول</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=991">ساوه</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=578">شاهرود</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=479">بروجرد</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=822">سبزوار</a></div>
+              <div class="rTableCell submit_city_btn"><a class="submit_city_btn_text" href="/?citycode=968">کیش</a></div>
+            
+          </div>
+      </div>
+    </table>
+
+
+  </div>
+  </div>
+
+  <div class="footer_copy_right">
+    <p class="footer_copy_right_msg" id="footer_copy_right_msg" onmouseover="change_footer_text()" onmouseout="set_default_footer_text()">Desigend By AMK with ❤ | Developed By Erfan Saberi</p>
+  </div>
+
+  <div class="footer_alert">
+    <img src="/static/miscellaneous.png" alt="" class="footer_alert_image">
+    <p class="footer_alert_text">این برنامه صرفا جهت اطلاع شما نوشته شده است و ممکن است دارای خطا باشد !!</p>
+  </div>
+
+
+<!-- AZAN TIME BODY ======================================================= -->
+{% elif data.status == 'eftar' %}
+<body class="azan_time_body" dir="rtl" style="background-image: url('/static/image2.jpg');">
+        <div class="main">
+            <div class="container_bg"></div>
+
+            <div class="container">
+                <div class="city_name">
+                    <div class="city_name_right">
+                        <img class="city_name_right_image"
+                            src="/static/interface.svg" alt="">
+                        <p>شهر</p>
+                    </div>
+                    <div class="city_name_left">
+                        <p>{{data.shahr}}</p>
+                    </div>
+                </div>
+                <p class="azan_time_alert_text"> وقت افطار است</p>
+                <br>
+                <a href="/" class="back_btn">بازگشت</a>
+            </div>
+        </div>
+
+
+<!-- NOT FIND BODY ====================================================== -->
+{% elif data.status == 'cityNotFound' %}
+<body class="not_find_body" dir="rtl" style="background-image: url('/static/image2.jpg');">
+        <div class="main">
+            <div class="container_bg"></div>
+
+            <div class="container_right">
+                <p class="container_right_msg" dir="ltr">!! شهر پیدا نشد</p>
+
+                <a href="/" class="back_btn">بازگشت</a>
+            </div>
+
+            <div class="container_left">
+                <img class="container_left_image" src="/static/smileys.svg"
+                    alt="" style="width: 50%;">
+            </div>
+
+        </div>
+
+
+<!-- TIME ALERT BODY =================================================== -->
+{% elif data.status == 'notstarted' %}
+<body class="time_alert_body" dir="rtl" style="background-image: url('/static/image2.jpg');">
+  <div class="main">
+      <div class="container_bg"></div>
+
+      <div class="container_time_alert">
+          <div class="city_name">
+              <div class="city_name_right">
+                  <img class="city_name_right_image"
+                      src="/static/interface.svg" alt="">
+                  <p>شهر</p>
+              </div>
+              <div class="city_name_left">
+                  <p>{{data.shahr}}</p>
+              </div>
+          </div>
+
+          <div class="azan_hour">
+              <div class="azan_hour_right">
+                  <img class="azan_hour_right_image"
+                      src="/static/wall-clock.svg" alt="">
+                  <p>اذان صبح</p>
+              </div>
+              <div class="azan_hour_left">
+                  <p>{{data.sobh}}</p>
+              </div>
+          </div>
+
+          <p class="azan_time_alert_text">روزه شما هنوز شروع نشده</p>
+
+          <a href="/" class="back_btn">بازگشت</a>
+      </div>
+    </div>
+{% endif %}  
+
+
+    
+  </body>
+
+  <script src="/static/main.js"></script>
+</html>

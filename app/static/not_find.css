@@ -1,0 +1,23 @@
+.not_find_body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/static/image2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.not_find_body .container_right_msg {
+  color: white;
+  font-size: 25px;
+}
+/*# sourceMappingURL=not_find.css.map */
