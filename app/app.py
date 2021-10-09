@@ -52,6 +52,3 @@ def getremainingtime():
 
     else:
         return 'An error occurred during connecting to "Aviny.com" API.'
-
-if __name__ == "__main__":
-    app.run("localhost", 5000, debug=True)
