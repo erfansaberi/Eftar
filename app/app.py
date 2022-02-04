@@ -1,15 +1,12 @@
 import requests
 import datetime
+import jdatetime
 from flask import Flask, render_template, request, redirect, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def getremainingtime():
-    time = requests.get('https://api.keybit.ir/time/')
-
-    nowstr = time.json().get('time24').get('full').get('en')
-    now = datetime.datetime.strptime(nowstr, '%H:%M:%S').time()
     '''this function return a string that contain the remaining hours and minutes of your fast'''
     try:
         if request.args.get('citycode'):
@@ -19,15 +16,16 @@ def getremainingtime():
             citycode = request.form.get('citycode')
             citycode = int(citycode)
         else:
-            return render_template('home.html',data={'status':'error','time':now})   
+            return render_template('home.html',data={'status':'error'})   
     except:
-        return render_template('home.html',data={'status':'error','time':now})
+        return render_template('home.html',data={'status':'error'})
     try:
         '''using aviny.com api to get maghreb and sobh azan time'''
         oghat = requests.get(f'https://prayer.aviny.com/api/prayertimes/{citycode}')
     except:
         return 'An error occurred during connecting to "Aviny.com" API.'
     if oghat.ok:
+        now = datetime.datetime.strptime(oghat.json().get('Today').split(' - ')[1], '%I:%M %p').time()
         maghreb = oghat.json().get('Maghreb')
         sobh = oghat.json().get('Imsaak')
         shahr = oghat.json().get('CityName')
