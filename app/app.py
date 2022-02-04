@@ -1,6 +1,5 @@
 import requests
 import datetime
-import jdatetime
 from flask import Flask, render_template, request, redirect, render_template
 
 app = Flask(__name__)
